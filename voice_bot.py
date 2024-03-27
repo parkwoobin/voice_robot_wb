@@ -134,7 +134,7 @@ def main():
                     st.write(f'<div style="display:flex;align-items:center;"><div style="background-color:#c1f4ff;border-radius:12px;padding:8px 12px;margin-left:8px;">{message}</div><div style="font-size:0.8rem;color:gray;">{time}</div></div>', unsafe_allow_html=True)
                     st.write("")
                 else:
-                    st.write(f'<div style="display:flex;align-items:center;justify-content:flex-end;"><div style="background-color:#ececec;border-radius:12px;padding:8px 12px;margin-left:8px;">{message}</div><div style="font-size:0.8rem;color:gray;">{time}</div></div>', unsafe_allow_html=True)
+                    st.write(f'<div style="display:flex;align-items:center;justify-content:flex-end;"><div style="font-size:0.8rem;color:gray;">{time}</div><div style="background-color:#ececec;border-radius:12px;padding:8px 12px;margin-left:8px;">{message}</div></div>', unsafe_allow_html=True)
                     st.write("")
             TTS(response)       
 
