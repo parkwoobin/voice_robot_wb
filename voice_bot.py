@@ -16,7 +16,7 @@ def STT(audio, apikey):
     # 음원 파일 열기
     audio_file = open(filename, "rb")
     # Whisper 모델을 활용해 텍스트 얻기
-    client = openai.OpenAI(api_key = "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")
+    client = openai.OpenAI(api_key = "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")
     respons = client.audio.transcriptions.create(model = "whisper-1", file = audio_file)
     audio_file.close()
     # 파일 삭제
@@ -24,7 +24,7 @@ def STT(audio, apikey):
     return respons. text
 
 def ask_gpt(prompt, model, apikey):
-    client = openai.OpenAI(api_key = "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")
+    client = openai.OpenAI(api_key = "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")
     response = client.chat.completions.create(model=model, messages=prompt)
     gptResponse = response.choices[0].message.content
     return gptResponse
@@ -85,7 +85,7 @@ def main():
             st.session_state["check_reset"] = False
 
     with st.sidebar:
-        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="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", value="", type="password")
+        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키", placeholder="Enter Your API KEY", value="", type="password")
         st.markdown(" --- ")
         # GPT 모델 선택하기 위한 라디오 버튼 생성
         model = st.radio(label="GPT 모델", options=["gpt-4","gpt-3.5-turbo"])
