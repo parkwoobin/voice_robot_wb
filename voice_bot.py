@@ -16,7 +16,7 @@ def STT(audio, apikey):
     # 음원 파일 열기
     audio_file = open(filename, "rb")
     # Whisper 모델을 활용해 텍스트 얻기
-    client = openai.OpenAI(api_key = "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")
+    client = openai.OpenAI(api_key = "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")
     respons = client.audio.transcriptions.create(model = "whisper-1", file = audio_file)
     audio_file.close()
     # 파일 삭제
@@ -24,7 +24,7 @@ def STT(audio, apikey):
     return respons. text
 
 def ask_gpt(prompt, model, apikey):
-    client = openai.OpenAI(api_key = "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")
+    client = openai.OpenAI(api_key = "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")
     response = client.chat.completions.create(model=model, messages=prompt)
     gptResponse = response.choices[0].message.content
     return gptResponse
